@@ -81,19 +81,12 @@ function [scenario, egovehicle] = helperCreateDrivingScenario
     ftargetpath = [8 2 10; 60 -3.2 10; 120 33 10];
     ftargetspeed = 35;
     smoothTrajectory(ftargetcar,ftargetpath,ftargetspeed);
-
-    % Add a second target vehicle that travels in the left lane at 30m/s.    
-    %{
-    ltargetcar = vehicle(scenario,ClassID=1);
-    ltargetpath = [-5.0 3.5 10; 60 3.5 10; 111 28.5 10];
-    ltargetspeed = 30;
-    smoothTrajectory(ltargetcar,ltargetpath,ltargetspeed);
-    %}
-    % Add a third target vehicle that travels in the left lane at 40m/s.    
+    
+    % Add a second target vehicle that travels in the left lane at 50m/s.    
     rtargetcar = vehicle(scenario,ClassID=1);
-    targetpath3 = [-31.6 -18.5 10; -10 -7 10; 0 -2.5 10; 30 -3 10; 90 0 10;  120 -0.5 10; 180 -30 10];
-    targetspeed3 = 50;
-    smoothTrajectory(rtargetcar,targetpath3,targetspeed3);
+    rtargetpath = [-31.6 -18.5 10; -10 -7 10; 0 -2.5 10; 30 -3 10; 90 0 10;  120 -0.5 10; 180 -30 10];
+    rtargetspeed = 50;
+    smoothTrajectory(rtargetcar,rtargetpath,rtargetspeed);
 end
 %% 
 % |helperCreateBEP| creates a bird's-eye-plot for visualing the driving scenario 
